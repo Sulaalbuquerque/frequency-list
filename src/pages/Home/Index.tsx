@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef} from 'react'
+import { useState, useEffect} from 'react'
 import { Card, CardProps } from '../../components/Card/Index'
 import { ContainerCards, ContainerHeader, ContainerHome } from './styles'
 

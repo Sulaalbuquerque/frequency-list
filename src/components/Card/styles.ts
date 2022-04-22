@@ -17,12 +17,4 @@ export const ContainerCard = styled.div`
         font-size: .8rem;
         margin-right: 1rem;
     }
-
-    @media (max-width: 400px) {}
-    @media (max-width: 770px) {}
-    @media (max-width: 990px) {
-    }
-    @media (max-width: 1200px) {}
-    @media (max-width: 1400px) {}
-    @media (max-width: 1600px) {}
 `
