@@ -1,11 +1,11 @@
 import { ContainerCard } from './styles'
 
-interface cardProps {
+export interface CardProps {//exportar para ser usado em outro arquivo tbm
   name: string;
   schedule: string;
 }
 
-export function Card({ name, schedule } : cardProps) {
+export function Card({ name, schedule } : CardProps) {
 
   return (
       <>

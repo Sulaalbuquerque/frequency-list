@@ -5,6 +5,7 @@ export const ContainerHome = styled.div`
     font-family: sans-serif;
     height: 100vh;
     padding-bottom: 4rem;
+    min-width: 400px;
 
     header{
         margin: 2rem 0;
@@ -52,6 +53,12 @@ export const ContainerHome = styled.div`
         cursor: pointer;
         transition: filter .2s;
 
+        :disabled{
+            cursor: default;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
         :hover{
             filter: brightness(.7);
         }
@@ -64,6 +71,25 @@ export const ContainerHeader = styled.div`
     align-items: center;
     margin-bottom: 4rem;
     
+    @media (max-width: 550px) {
+       header{
+           display: block;
+
+            h1{
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+
+            .user{
+                justify-content: end;
+            }
+        }
+
+        input, button{
+            padding: 1.5rem;
+            font-size: 1rem;
+        }
+    }
 `
 
 export const ContainerCards = styled.div`

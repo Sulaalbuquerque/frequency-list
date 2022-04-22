@@ -1,16 +1,12 @@
-import { useState, useEffect} from 'react'
-import { Card } from '../../components/Card/Index'
+import { useState, useEffect, useRef} from 'react'
+import { Card, CardProps } from '../../components/Card/Index'
 import { ContainerCards, ContainerHeader, ContainerHome } from './styles'
-
-interface nameProps {
-  //name: string;
-}
 
 export function Home() {
 
-  const [studentName, setStudentName] = useState('') //armazenar nome digitado do input
+  const [studentName, setStudentName] = useState('') 
 
-  const [students, setStudents] = useState([]) //armazenar todos os nomes digitados. atualizar a lista
+  const [students, setStudents] = useState<CardProps[]>([]) 
 
   const [user, setUser] = useState({ name: '', avatar: '' })
 
@@ -18,7 +14,7 @@ export function Home() {
     const newStudent = {
       name: studentName,
       schedule: new Date().toLocaleTimeString("pt-br", {
-        hour: '2-digit',
+        hour: '2-digit',    
         minute: '2-digit',
         second: '2-digit',
       })
@@ -47,7 +43,7 @@ export function Home() {
             <header>
               <h1>Lista de presença</h1>
 
-              <div>
+              <div className='user'>
                 <strong>{user.name}</strong>
                 <img src={user.avatar} alt='foto de perfil'/>
               </div>
@@ -56,17 +52,23 @@ export function Home() {
             <input 
               type='text' 
               placeholder='Digite o nome'
-              onChange={e => setStudentName(e.target.value)}//armazenar o que fioi digitado
+              onChange={e => setStudentName(e.target.value)}
             />
-            <button onClick={handleAddStudent} type='button'>Adicionar</button>
+            <button 
+              //disabled 
+              onClick={handleAddStudent} 
+              type='button'
+            >
+              Adicionar
+            </button>
           </ContainerHeader>
 
           <ContainerCards>
             {
               students.map(student => (
                 <Card 
-                  key={student.schedule} //gerar chave única paracada componente
-                  name={student.name} 
+                  key={student.schedule} 
+                  name={student.name  } 
                   schedule={student.schedule}
                 />
               ))
