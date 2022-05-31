@@ -63,6 +63,8 @@ export const ContainerHome = styled.div`
             filter: brightness(.7);
         }
     }
+
+    
 `
 
 export const ContainerHeader = styled.div`
